@@ -23,17 +23,17 @@ body{
     align-content: stretch;
 }
 
+.div-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main{
     flex: 1;
     margin-top: 12px;
     margin-left: 24px;
     margin-right: 24px;
-}
-
-#startScreen-start{
-    margin:  auto;
-    margin-right:0;
-    display:block;
 }
 
 #quizz-question{
@@ -71,19 +71,25 @@ main{
     font-weight: bold;
 }
 
-.leftButton{
+.button-no{
     margin:  auto;
     margin-left:0;
     display:block;
 }
 
-.centeredButton{
-    margin: 0  auto;
+.button-maybe{
+    margin: 0 auto;
     display:block;
 }
 
-.rightButton{
+.button-yes-but{
+    margin: 0 auto;
+    display:block;
+}
+
+.button-yes{
     margin:  auto;
     margin-right:0;
     display:block;
 }
+

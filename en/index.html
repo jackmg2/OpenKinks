@@ -27,23 +27,68 @@
     </header>
 
     <main class="bd-content" role="main">
-        <div id="div-start" style="display:none;">
-            <p>
-                <span id="span-partnerName" style="font-size: x-large; font-weight: bold;"></span>
-                <span id="span-itsYourTurn" style="font-size: large;"></span>
-            </p>
-            <button type="button" id="startScreen-start" class="btn btn-raised btn-success" />
-        </div>
-
-        <div id="div-quizz" style="display:none;" class="container flexbox-parent"> 
-            <div class="row">
+        <div id="div-configuration" class="container" style="display:none;">
+            <div id="div-level" class="row">
                 <div class="col">
-                    <h2 id="quizz-question"></h2>
+                    <label id="label-level" for="levels">Choose your level:</label>
+                    <select name="levels" id="select-level" class="custom-select">
+                    </select>
                 </div>
             </div>
-            
-            <div id="quizz-buttons" class="row align-items-end">
-                
+
+            <div class="row" style="margin-top: 2em;">
+                <div id="div-partner1" class="col">
+                    <label id="label-sex-partner1" for="partner1">Sex</label>
+                    <select name="partner1" id="select-sex-partner1" class="custom-select">
+                    </select>
+                </div>
+
+                <div class="col"></div>
+
+                <div id="div-partner2" class="col">
+                    <label id="label-sex-partner2" for="partner2">Sex</label>
+                    <select name="partner2" id="select-sex-partner2" class="custom-select">
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 2em;">
+                <div class="col div-button">
+                    <button type="button" id="configurationScreen-start" class="btn btn-raised btn-success" />
+                </div>
+            </div>
+        </div>
+
+        <div id="div-start" style="display:none;">
+            <div class="container">
+                <div class="row">
+                    <p style="margin: auto;">
+                        <span id="span-partnerName" style="font-size: x-large; font-weight: bold;"></span>
+                        <span id="span-itsYourTurn" style="font-size: large;"></span>
+                    </p>
+                </div>
+
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col div-button">
+                        <button type="button" id="startScreen-start" class="btn btn-raised btn-success" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="div-quizz" style="display:none;" class="container flexbox-parent">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 id="quizz-question"></h2>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 2em;">
+                    <div id="quizz-buttons" class="align-items-end">
+
+                    </div>
+                </div>
             </div>
         </div>
 
