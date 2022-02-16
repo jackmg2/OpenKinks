@@ -88,7 +88,7 @@ var questions = [
       "level": 1
     },
     {
-      "question": "Have my partner double penetrate me (sex, toys)",
+      "question": "That my partner double penetrates me (sex, toys)",
       "reversedForm": "Double penetrate partner (sex, toys)",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'f',
@@ -175,7 +175,7 @@ var questions = [
     },
     {
       "question": "Be submissive for partner",
-      "reversedForm": "Have my partner more submissive to me",
+      "reversedForm": "That my partner be more submissive to me",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
       "tags": [
@@ -211,7 +211,7 @@ var questions = [
     },
     {
       "question": "Peg my partner",
-      "reversedForm": "Have my partner peg me",
+      "reversedForm": "That my partner pegs me",
       "sourcePartnerGender": 'f',
       "destinationPartnerGender": 'a',
       "tags": [
@@ -257,7 +257,7 @@ var questions = [
     },
     {
       "question": "Cum over partner's breasts / neck (pearl necklace)",
-      "reversedForm": "Have my partner cum over my breast / neck (pearl necklace)",
+      "reversedForm": "That my partner cums over my breast / neck (pearl necklace)",
       "sourcePartnerGender": 'm',
       "destinationPartnerGender": 'a',
       "tags": [
@@ -267,7 +267,7 @@ var questions = [
     },
     {
       "question": "Bite my partner",
-      "reversedForm": "Have my partner bite me",
+      "reversedForm": "That my partner bites me",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
       "tags": [],
@@ -450,7 +450,7 @@ var questions = [
     },
     {
       "question": "Thrust my penis between partner's breasts",
-      "reversedForm": "Have my partner trust his penis between my breast",
+      "reversedForm": "That my partner trusts his penis between my breast",
       "sourcePartnerGender": 'm',
       "destinationPartnerGender": 'f',
       "tags": [],
@@ -627,7 +627,7 @@ var questions = [
       "level": 4
     },
     {
-      "question": "Have my partner use nipple clamps",
+      "question": "That my partner uses nipple clamps",
       "reversedForm": "Use nipple clamps",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
@@ -661,7 +661,7 @@ var questions = [
     },
     {
       "question": "Use a riding crop on partner",
-      "reversedForm": "Have my partner use a riding crop on me",
+      "reversedForm": "That my partner uses a riding crop on me",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
       "tags": [],
@@ -682,7 +682,7 @@ var questions = [
       "level": 1
     },
     {
-      "question": "Have my partner walk in public with cum on clothes / skin",
+      "question": "That my partner walks in public with cum on clothes / skin",
       "reversedForm": "Walk in public with cum on clothes / skin",
       "sourcePartnerGender": 'm',
       "destinationPartnerGender": 'a',
@@ -690,7 +690,7 @@ var questions = [
       "level": 4
     },
     {
-      "question": "Have my partner walk naked in public (beach, street, parking, hike, ...)",
+      "question": "That my partner walks naked in public (beach, street, parking, hike, ...)",
       "reversedForm": "Walk naked in public (beach, street, parking, hike, ...)",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
@@ -698,7 +698,7 @@ var questions = [
       "level": 4
     },
     {
-      "question": "Have my partner use a remote controlled toy on me in public",
+      "question": "That my partner uses a remote controlled toy on me in public",
       "reversedForm": "Use a remote controlled toy on my partner in public",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
