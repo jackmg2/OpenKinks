@@ -63,10 +63,6 @@ main{
 
 #quizz-buttons{
     height: auto;
-    display: flex;
-    flex-direction: row;
-    align-content: stretch;
-    flex: 1;
     margin-bottom: 24px;
 }
 
@@ -81,23 +77,21 @@ main{
 
 .button-no{
     margin:  auto;
-    margin-left:0;
     display:block;
 }
 
 .button-maybe{
-    margin: 0 auto;
+    margin: auto;
     display:block;
 }
 
 .button-yes-but{
-    margin: 0 auto;
+    margin: auto;
     display:block;
 }
 
 .button-yes{
     margin:  auto;
-    margin-right:0;
     display:block;
 }
 

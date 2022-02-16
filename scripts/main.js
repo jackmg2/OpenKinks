@@ -16,13 +16,13 @@ var configuration = {
     },
     fillSex: function (select) {
         let option1 = document.createElement("option");
-        option1.text = 'Penis';
-        option1.value = 'Penis';
+        option1.text = i18n.penisLabel;
+        option1.value = i18n.penisLabel;
         select.add(option1);
 
         let option2 = document.createElement("option");
-        option2.text = 'Vagina';
-        option2.value = 'Vagina';
+        option2.text = i18n.vaginaLabel;
+        option2.value = i18n.vaginaLabel;
         select.add(option2);
     },
     fillSexes: function () {
@@ -147,9 +147,15 @@ var quizz = {
         this.cleanQuestionUI();
         this.question.textContent = configuration.questions[this.questionIndex]['questionPartner' + currentPartnerId];
 
+        let isVertical = window.innerWidth < 400; 
+        let divMainLine;
+        if(!isVertical){            
+            divMainLine = document.createElement("div");
+            divMainLine.setAttribute("class", "row");   
+            this.buttons.append(divMainLine);         
+        }
+
         for (let i = 0; i < 4; i++) {
-            let divButton = document.createElement("div");
-            divButton.setAttribute("class", "col");
             let button = document.createElement("button");
             button.setAttribute("type", "button");
             button.setAttribute("class", "btn btn-raised btn-primary");
@@ -157,8 +163,25 @@ var quizz = {
             button.value = i18n.buttonLabels[i];
             button.innerText = i18n.buttonLabels[i];
             button.addEventListener("click", () => this.saveAnswer(i));
+
+            let divButton = document.createElement("div");
+            divButton.setAttribute("class", "col");
+
             divButton.appendChild(button);
-            this.buttons.append(divButton);
+
+            if(isVertical){
+                divButton.setAttribute("class", "col text-center");
+                button.setAttribute("class", "btn btn-raised btn-primary mb-2 mt-2 ml-auto mr-auto");
+
+                let divLine = document.createElement("div");
+                divLine.setAttribute("class", "row");
+                divLine.appendChild(divButton);
+
+                this.buttons.append(divLine);
+            }
+            else{                
+                divMainLine.appendChild(divButton);
+            }
         }
     },
     cleanQuestionUI: function () {
