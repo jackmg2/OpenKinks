@@ -6,6 +6,14 @@ body{
     display: flex;
 }
 
+header a{
+    color: #fff;
+}
+
+header a:hover{
+    color: #fff;
+}
+
 .bd-navbar {
     min-height: 4rem;
     background-color: #3f51b5;

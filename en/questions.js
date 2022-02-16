@@ -388,6 +388,15 @@ var questions = [
       "level": 4
     },
     {
+      "question": "Experiment Shibari",
+      "sourcePartnerGender": 'a',
+      "destinationPartnerGender": 'a',
+      "tags": [
+        "bdsm"
+      ],
+      "level": 4
+    },
+    {
       "question": "Mutually masturbate",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
@@ -591,14 +600,6 @@ var questions = [
       "level": 3
     },
     {
-      "question": "Spank partner with hand during sex",
-      "reversedForm": "Being spanked with hand during sex",
-      "sourcePartnerGender": 'a',
-      "destinationPartnerGender": 'a',
-      "tags": [],
-      "level": 2
-    },
-    {
       "question": "Go to a nudist resort with partner",
       "sourcePartnerGender": 'a',
       "destinationPartnerGender": 'a',
@@ -657,14 +658,6 @@ var questions = [
       "destinationPartnerGender": 'a',
       "tags": [],
       "level": 3
-    },
-    {
-      "question": "Have pictures taken by partner",
-      "reversedForm": "Take pictures of my partner",
-      "sourcePartnerGender": 'a',
-      "destinationPartnerGender": 'a',
-      "tags": [],
-      "level": 2
     },
     {
       "question": "Use a riding crop on partner",

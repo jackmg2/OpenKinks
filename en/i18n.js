@@ -9,9 +9,9 @@ var i18n = {
     partnerLikesIt: 'Partner {0} would like it!',
     partnerLikesItBut: 'Partner {0} would like it <span style=\'font-weight:bold;\'>buuut</span> have something to say.',
     notCompatible: 'Huho, we didn\'t find any compatibilities on this session...',
-    buttonLabels: ['no', 'maybe', 'yes-but', 'yes'],
+    buttonLabels: ['no', 'if partner is open', 'yes-but', 'yes'],
     chooseLevelLabel: 'Choose a level',
-    pickSexLabel: 'Partner {0}, what is your biological sex?',
+    pickSexLabel: 'Partner {0}, what is your physical sex?',
     penisLabel: 'Penis',
     vaginaLabel: 'Vagina',
     levels:[{

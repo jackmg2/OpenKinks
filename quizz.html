@@ -15,15 +15,12 @@
 
     <link rel="stylesheet" href="../styles/style.css">
 
-    <script src="./questions.js"></script>
-    <script src="./i18n.js"></script>
-
     <title>Open Kinks</title>
 </head>
 
 <body class="flexbox-parent">
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-        <h1 id="title"></h1>
+        <a href="./index.html"><h1 id="title">Open Kinks</h1></a>
     </header>
 
     <main class="bd-content" role="main">
@@ -95,20 +92,38 @@
         <div id="div-review" style="display:none;">
 
         </div>
-    </main>
-    <script src="../scripts/main.js"></script>
+    </main>    
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
+            integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+            crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script>
-    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+            integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+            crossorigin="anonymous"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+    <script>
+        $(document).ready(function () { $('body').bootstrapMaterialDesign(); });
+        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const lang = urlParams.get('lang');
+        
+        var i18nTag = document.createElement("script");
+        i18nTag.src = "./"+lang+"/i18n.js";
+        document.getElementsByTagName("head")[0].appendChild(i18nTag);
+
+        var questionsTag = document.createElement("script");
+        questionsTag.src = "./"+lang+"/questions.js";
+        document.getElementsByTagName("head")[0].appendChild(questionsTag);
+
+        var mainScriptTag = document.createElement("script");
+        mainScriptTag.src = "../scripts/main.js";
+        document.getElementsByTagName("head")[0].appendChild(mainScriptTag);
+    </script>
 </body>
 
 </html>
