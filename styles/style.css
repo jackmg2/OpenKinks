@@ -1,0 +1,103 @@
+html, body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+}
+
+header a{
+    color: #fff;
+}
+
+header a:hover{
+    color: #fff;
+}
+
+.bd-navbar {
+    min-height: 4rem;
+    background-color: #3f51b5;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+    color: #fff;
+}
+
+.flexbox-parent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.div-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    flex: 1;
+    margin-top: 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+#quizz-question{
+    text-align: center;
+    font-size: xx-large;
+}
+
+#div-quizz{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start;
+    align-items: stretch; 
+    align-content: stretch;
+}
+
+#quizz-buttons{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+#languages{
+    display: flex;  
+    flex-wrap: wrap;
+}
+
+.reviewQuestion{
+    font-weight: bold;
+}
+
+.button-no{
+    margin:  auto;
+    margin-left:0;
+    display:block;
+}
+
+.button-maybe{
+    margin: 0 auto;
+    display:block;
+}
+
+.button-yes-but{
+    margin: 0 auto;
+    display:block;
+}
+
+.button-yes{
+    margin:  auto;
+    margin-right:0;
+    display:block;
+}
+

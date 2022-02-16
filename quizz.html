@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <title>Open Kinks</title>
+</head>
+
+<body class="flexbox-parent">
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+        <a href="./index.html"><h1 id="title">Open Kinks</h1></a>
+    </header>
+
+    <main class="bd-content" role="main">
+        <div id="div-configuration" class="container" style="display:none;">
+            <div id="div-level" class="row">
+                <div class="col">
+                    <label id="label-level" for="levels">Choose your level:</label>
+                    <select name="levels" id="select-level" class="custom-select">
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 2em;">
+                <div id="div-partner1" class="col">
+                    <label id="label-sex-partner1" for="partner1">Sex</label>
+                    <select name="partner1" id="select-sex-partner1" class="custom-select">
+                    </select>
+                </div>
+
+                <div class="col"></div>
+
+                <div id="div-partner2" class="col">
+                    <label id="label-sex-partner2" for="partner2">Sex</label>
+                    <select name="partner2" id="select-sex-partner2" class="custom-select">
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 2em;">
+                <div class="col div-button">
+                    <button type="button" id="configurationScreen-start" class="btn btn-raised btn-success" />
+                </div>
+            </div>
+        </div>
+
+        <div id="div-start" style="display:none;">
+            <div class="container">
+                <div class="row">
+                    <p style="margin: auto;">
+                        <span id="span-partnerName" style="font-size: x-large; font-weight: bold;"></span>
+                        <span id="span-itsYourTurn" style="font-size: large;"></span>
+                    </p>
+                </div>
+
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col div-button">
+                        <button type="button" id="startScreen-start" class="btn btn-raised btn-success" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="div-quizz" style="display:none;" class="container flexbox-parent">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 id="quizz-question"></h2>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 2em;">
+                    <div id="quizz-buttons" class="align-items-end">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="div-review" style="display:none;">
+
+        </div>
+    </main>    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+            integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+            integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+            crossorigin="anonymous"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+    <script>
+        $(document).ready(function () { $('body').bootstrapMaterialDesign(); });
+        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const lang = urlParams.get('lang');
+        
+        var i18nTag = document.createElement("script");
+        i18nTag.src = "./"+lang+"/i18n.js";
+        document.getElementsByTagName("head")[0].appendChild(i18nTag);
+
+        var questionsTag = document.createElement("script");
+        questionsTag.src = "./"+lang+"/questions.js";
+        document.getElementsByTagName("head")[0].appendChild(questionsTag);
+
+        var mainScriptTag = document.createElement("script");
+        mainScriptTag.src = "../scripts/main.js";
+        document.getElementsByTagName("head")[0].appendChild(mainScriptTag);
+    </script>
+</body>
+
+</html>
