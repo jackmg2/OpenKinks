@@ -10,9 +10,8 @@
 [X] Update readme
 [X] Globalisation
 [X] French version
-[ ] Push
-[ ] Set up git pages
-[ ] Beta test
+[X] Push
+[X] Set up git pages
 
 # V0-Beta
 [ ] Homepage
