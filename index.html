@@ -8,10 +8,7 @@
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-    <!-- Material Design for Bootstrap CSS -->
-    <link rel="stylesheet"
-        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./styles/style.css">
 
@@ -20,13 +17,14 @@
 
 <body class="flexbox-parent">
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-        <a href="./index.html"><h1 id="title">Open Kinks</h1></a>
+        <a href="./index.html"><h1 id="title" class="ml-2">Open Kinks</h1></a>
     </header>
 
     <main role="main">
+        <h1>Pick your language</h1>
         <div id="languages">
-            <a href="./quizz.html?lang=en" class="btn">EN</a>
-            <a href="./quizz.html?lang=fr" class="btn">FR</a>
+            <a href="./quizz.html?lang=en" class="btn btn-primary mr-4" role="button">English</a>
+            <a href="./quizz.html?lang=fr" class="btn btn-primary" role="button">French</a>
         </div>
     </main>
 
