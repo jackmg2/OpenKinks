@@ -2,7 +2,7 @@ var i18n = {
     version: 0.9,
     title: 'Open Kinks',
     indexPage: {
-        description: '<strong>Open Kinks</strong> est un outil pour ouvrir la discussion sur les envies et désirs de deux partenaires.<br /><br />Vous allez répondre l\'un après l\'autre à un questionnaire. <br />Vous découvrirez ensuite vos affinités communes et les points sur lesquels vous pouvez échanger.<br /><br /><strong>Si vous répondez "Non" à une pratique, elle ne sera pas visible.</strong><br /> Ainsi, vous ne partagerez pas des pratiques qui peuvent sembler trop extrême à votre partenaire.',
+        description: '<strong>Open Kinks</strong> est un outil pour ouvrir la discussion sur les envies et désirs de deux partenaires.<br /><br />Vous allez répondre l\'un après l\'autre à un questionnaire. <br />Vous découvrirez ensuite vos affinités communes et les points sur lesquels vous pouvez échanger.<br /><br /><strong>Si vous répondez "Non" à une pratique, elle ne sera pas visible.</strong><br /> Ainsi, vous ne verrez pas les pratiques qui peuvent vous sembler trop extrêmes pour le moment.',
         startButton: 'Démarrer',
         disclaimer: 'Cet outil est entièrement Open-Source, vous pouvez y contribuer.<br/>Aucune donnée n\'est conservée.'
     },
