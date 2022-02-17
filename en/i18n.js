@@ -2,7 +2,7 @@ var i18n = {
     version: 0.9,
     title: 'Open Kinks',
     indexPage: {
-        description: '<strong>Open Kinks</strong> is a tool to open the discussion about the desires and wishes of two partners.<br /><br />You will answer a questionnaire one after the other.<br />You will then discover your common affinities and the points on which you can exchange.<br /><br /><strong>If you answer "No" to a practice, it will not be visible.</strong><br />This way, you won\'t share practices that may seem too extreme to your partner.',
+        description: '<strong>Open Kinks</strong> is a tool to open the discussion about the desires and wishes of two partners.<br /><br />You will answer a questionnaire one after the other.<br />You will then discover your common affinities and the points on which you can exchange.<br /><br /><strong>If you answer "No" to a practice, it will not be visible.</strong><br />That way, both of you won\'t know about things you\'re not ready to do yet.',
         disclaimer: 'This tool is 100% Open-Source, you can contribute!<br/>We do not store any answers.',
         startButton: 'Start'
     },
