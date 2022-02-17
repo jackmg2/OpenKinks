@@ -14,16 +14,18 @@
 [X] Set up git pages
 
 # V0-Beta
-[ ] Homepage
-[ ] Explanation
+[X] Homepage
+[X] Explanation
 
 # V1
+[ ] Add a section in the quizz : "Already done", "Like / No opinion / Dislike"
 [ ] Display completion percentage
 [ ] Thematique picker
 [ ] Local history to avoid duplicate
 
 # V2
 [ ] Details on some kinks
+[ ] Change language on quizz page
 
 # V3
 [ ] Server side generation

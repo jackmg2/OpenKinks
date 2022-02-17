@@ -5,28 +5,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./styles/style.css">
 
     <title>Open Kinks</title>
 </head>
 
-<body class="flexbox-parent">
+<body>
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-        <a href="./index.html"><h1 id="title" class="ml-2">Open Kinks</h1></a>
+        <a id="homeLink" href="./index.html" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <h1 id="title" class="ml-2">Open Kinks</h1>
+        </a>
+        <select id="languages" aria-label="Pick your language" class="form-select ml-auto">
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+        </select>
     </header>
 
-    <main role="main">
-        <h1>Pick your language</h1>
-        <div id="languages">
-            <a href="./quizz.html?lang=en" class="btn btn-primary mr-4" role="button">English</a>
-            <a href="./quizz.html?lang=fr" class="btn btn-primary" role="button">French</a>
-        </div>
+    <main role="main" class="container text-center">
+        <section id="content">
+            <p id="description">
+
+            </p>
+            <a id="startButton" href="./quizz.html" class="btn btn-primary mt-4" role="button"></a>
+            <p id="disclaimer" class="font-weight-light mt-5">
+
+            </p>
+            <a href="https://github.com/jackmg2/OpenKinks"><img src="./styles/GitHub-Mark-64px.png" alt="Github icon"/></a>
+        </section>
     </main>
+
+    <footer></footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -35,12 +48,45 @@
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
         integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script>
     <script>
-    $(document).ready(function () { $('body').bootstrapMaterialDesign(); });
-    
+        var globalize = function (lang) {
+            document.getElementById("description").innerHTML = i18n.indexPage.description;
+            document.getElementById("startButton").innerText = i18n.indexPage.startButton;
+            document.getElementById("disclaimer").innerHTML = i18n.indexPage.disclaimer;
+            document.getElementById("startButton").href = './quizz.html?lang=' + lang;
+            document.getElementById("homeLink").href = './index.html?lang=' + lang;
+        }
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const lang = urlParams.get('lang') ? urlParams.get('lang') : 'en';
+
+        let i18nTag = document.createElement("script");
+        i18nTag.src = "./" + lang + "/i18n.js";
+        i18nTag.addEventListener('load', function () {
+            globalize(lang);
+        });
+        document.getElementsByTagName("head")[0].appendChild(i18nTag);
+
+
+        document.getElementById("languages").onchange = (evt) => {
+            let lang = evt.srcElement.value;
+
+            if (lang) {
+                document.getElementsByTagName("head")[0].childNodes.forEach((element) => {
+                    if (element && element.src && element.src.includes('i18n.js')) {
+                        element.parentNode.removeChild(element);
+                    }
+                });
+
+                let i18nTag = document.createElement("script");
+                i18nTag.src = "./" + lang + "/i18n.js";
+                i18nTag.addEventListener('load', function () {
+                    globalize(lang);
+                });
+                document.getElementsByTagName("head")[0].appendChild(i18nTag);
+            }
+        }
     </script>
 </body>
 

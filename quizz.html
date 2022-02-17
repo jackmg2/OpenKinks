@@ -5,25 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-    <!-- Material Design for Bootstrap CSS -->
-    <link rel="stylesheet"
-        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./styles/style.css">
 
     <title>Open Kinks</title>
 </head>
 
-<body class="flexbox-parent">
+<body>
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-        <a href="./index.html"><h1 id="title" class="ml-2">Open Kinks</h1></a>
+        <a id="homeLink" href="./index.html" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <h1 id="title" class="ml-2">Open Kinks</h1>
+        </a>
+        <select id="languages" aria-label="Pick your language" class="form-select ml-auto">
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+        </select>
     </header>
 
-    <main class="bd-content" role="main">
+    <main role="main">
         <div id="div-configuration" class="container" style="display:none;">
             <div id="div-level" class="row">
                 <div class="col">
@@ -71,7 +74,7 @@
             </div>
         </div>
 
-        <div id="div-quizz" style="display:none;" class="container flexbox-parent">
+        <div id="div-quizz" style="display:none;">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -90,37 +93,43 @@
         <div id="div-review" style="display:none;">
 
         </div>
-    </main>    
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-            integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-            crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-            integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-            crossorigin="anonymous"></script>
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
-        $(document).ready(function () { $('body').bootstrapMaterialDesign(); });
-        
+
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const lang = urlParams.get('lang');
-        
+        document.getElementById("homeLink").href = './index.html?lang=' + lang;
+
         var i18nTag = document.createElement("script");
-        i18nTag.src = "./"+lang+"/i18n.js";
+        i18nTag.src = "./" + lang + "/i18n.js";
+        i18nTag.addEventListener('load', function () {
+            var questionsTag = document.createElement("script");
+            questionsTag.src = "./" + lang + "/questions.js";
+            questionsTag.addEventListener('load', function () {
+                var mainScriptTag = document.createElement("script");
+                mainScriptTag.src = "./scripts/main.js";
+                mainScriptTag.addEventListener('load', function () {
+
+                });
+                document.getElementsByTagName("head")[0].appendChild(mainScriptTag);
+            });
+            document.getElementsByTagName("head")[0].appendChild(questionsTag);
+        });
         document.getElementsByTagName("head")[0].appendChild(i18nTag);
 
-        var questionsTag = document.createElement("script");
-        questionsTag.src = "./"+lang+"/questions.js";
-        document.getElementsByTagName("head")[0].appendChild(questionsTag);
 
-        var mainScriptTag = document.createElement("script");
-        mainScriptTag.src = "./scripts/main.js";
-        document.getElementsByTagName("head")[0].appendChild(mainScriptTag);
+
+
     </script>
 </body>
 

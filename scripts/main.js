@@ -6,29 +6,29 @@ var configuration = {
     selectPartner2: document.getElementById('select-sex-partner2'),
     questions: [],
     fillLevels: function () {
-        document.getElementById('label-level').innerText = i18n.chooseLevelLabel;
-        for (let i = 0; i < i18n.levels.length; i++) {
+        document.getElementById('label-level').innerText = i18n.quizzPage.chooseLevelLabel;
+        for (let i = 0; i < i18n.quizzPage.levels.length; i++) {
             let option = document.createElement("option");
-            option.text = i18n.levels[i].description;
-            option.value = i18n.levels[i].level;
+            option.text = i18n.quizzPage.levels[i].description;
+            option.value = i18n.quizzPage.levels[i].level;
             this.selectLevel.add(option);
         }
     },
     fillSex: function (select) {
         let option1 = document.createElement("option");
-        option1.text = i18n.penisLabel;
-        option1.value = i18n.penisLabel;
+        option1.text = i18n.quizzPage.penisLabel;
+        option1.value = i18n.quizzPage.penisLabel;
         select.add(option1);
 
         let option2 = document.createElement("option");
-        option2.text = i18n.vaginaLabel;
-        option2.value = i18n.vaginaLabel;
+        option2.text = i18n.quizzPage.vaginaLabel;
+        option2.value = i18n.quizzPage.vaginaLabel;
         select.add(option2);
     },
     fillSexes: function () {
-        document.getElementById('label-sex-partner1').innerText = i18n.pickSexLabel.format('1');
+        document.getElementById('label-sex-partner1').innerText = i18n.quizzPage.pickSexLabel.format('1');
         this.fillSex(this.selectPartner1);
-        document.getElementById('label-sex-partner2').innerText = i18n.pickSexLabel.format('2');
+        document.getElementById('label-sex-partner2').innerText = i18n.quizzPage.pickSexLabel.format('2');
         this.fillSex(this.selectPartner2);
     },
     startQuizz: function () {
@@ -68,7 +68,7 @@ var configuration = {
             .filter(q => (partner1Filter.source.some(f => f == q.sourcePartnerGender) && partner1Filter.destination.some(f => f == q.destinationPartnerGender))
                 || (partner2Filter.source.some(f => f == q.sourcePartnerGender) && partner2Filter.destination.some(f => f == q.destinationPartnerGender)));
 
-        selectedQuestions = selectedQuestions.takeRandomElements(10);
+        selectedQuestions = selectedQuestions.takeRandomElements(20);
 
         selectedQuestions.forEach((question) => {
             let newQuestion = { questionPartner1: '', questionPartner2: '' };
@@ -104,7 +104,7 @@ var configuration = {
         start.show();
     },
     init: function () {
-        document.getElementById('configurationScreen-start').innerText = i18n.startButton;
+        document.getElementById('configurationScreen-start').innerText = i18n.quizzPage.startButton;
         this.startButton.addEventListener("click", () => this.startQuizz());
         this.fillLevels();
         this.fillSexes();
@@ -136,7 +136,7 @@ var quizz = {
     divQuizz: document.getElementById('div-quizz'),
     question: document.getElementById('quizz-question'),
     buttons: document.getElementById('quizz-buttons'),
-    buttonsClasses: ['button-no', 'button-maybe', 'button-yes-but', 'button-yes'],
+    buttonsClasses: ['button-no btn-danger mb-2 mt-2 ml-auto mr-auto', 'button-maybe btn-info mb-2 mt-2 ml-auto mr-auto', 'button-yes-but btn-primary mb-2 mt-2 ml-auto mr-auto', 'button-yes btn-success mb-2 mt-2 ml-auto mr-auto'],
     hide: function () {
         this.divQuizz.style.display = "none";
     },
@@ -158,10 +158,9 @@ var quizz = {
         for (let i = 0; i < 4; i++) {
             let button = document.createElement("button");
             button.setAttribute("type", "button");
-            button.setAttribute("class", "btn btn-raised btn-primary");
-            button.classList.add(this.buttonsClasses[i]);
-            button.value = i18n.buttonLabels[i];
-            button.innerText = i18n.buttonLabels[i];
+            button.setAttribute("class", "btn btn-raised btn-primary"+this.buttonsClasses[i]);
+            button.value = i18n.quizzPage.buttonLabels[i];
+            button.innerText = i18n.quizzPage.buttonLabels[i];
             button.addEventListener("click", () => this.saveAnswer(i));
 
             let divButton = document.createElement("div");
@@ -171,7 +170,6 @@ var quizz = {
 
             if(isVertical){
                 divButton.setAttribute("class", "col text-center");
-                button.setAttribute("class", "btn btn-raised btn-primary mb-2 mt-2 ml-auto mr-auto");
 
                 let divLine = document.createElement("div");
                 divLine.setAttribute("class", "row");
@@ -200,7 +198,7 @@ var quizz = {
             this.hide();
             currentPartnerId++;
             this.questionIndex = 0;
-            start.paragraphCurrentPartner.spanName.textContent = i18n.partnerName.format("Partner " + currentPartnerId);
+            start.paragraphCurrentPartner.spanName.textContent = i18n.quizzPage.partnerName.format("Partner " + currentPartnerId);
             start.show();
         }
         else {
@@ -224,22 +222,22 @@ var review = {
                 youHaveNothingInCommon = false;
 
                 if (question.answerPartner1 == 1) {
-                    textPartner1 = i18n.partnerIsOpenToo.format('1');
+                    textPartner1 = i18n.quizzPage.partnerIsOpenToo.format('1');
                 }
                 if (question.answerPartner2 == 1) {
-                    textPartner2 = i18n.partnerIsOpenToo.format('2');
+                    textPartner2 = i18n.quizzPage.partnerIsOpenToo.format('2');
                 }
                 if (question.answerPartner1 == 2) {
-                    textPartner1 = i18n.partnerLikesItBut.format('1');
+                    textPartner1 = i18n.quizzPage.partnerLikesItBut.format('1');
                 }
                 if (question.answerPartner2 == 2) {
-                    textPartner2 = i18n.partnerLikesItBut.format('2');
+                    textPartner2 = i18n.quizzPage.partnerLikesItBut.format('2');
                 }
                 if (question.answerPartner1 == 3) {
-                    textPartner1 = i18n.partnerLikesIt.format('1');
+                    textPartner1 = i18n.quizzPage.partnerLikesIt.format('1');
                 }
                 if (question.answerPartner2 == 3) {
-                    textPartner2 = i18n.partnerLikesIt.format('2');
+                    textPartner2 = i18n.quizzPage.partnerLikesIt.format('2');
                 }
 
                 let paragraph = document.createElement('p');
@@ -257,7 +255,7 @@ var review = {
 
         if (youHaveNothingInCommon) {
             let paragraph = document.createElement('p');
-            paragraph.innerHTML = i18n.notCompatible;
+            paragraph.innerHTML = i18n.quizzPage.notCompatible;
             this.divReview.append(paragraph);
         }
 
@@ -295,9 +293,9 @@ var currentPartnerId = 1;
 document.getElementById('startScreen-start').addEventListener("click", () => launch());
 
 document.getElementById('title').innerText = i18n.title;
-document.getElementById('startScreen-start').value = i18n.startButton;
-document.getElementById('startScreen-start').innerText = i18n.startButton;
-start.paragraphCurrentPartner.spanName.textContent = i18n.partnerName.format("Partner " + currentPartnerId);
-start.paragraphCurrentPartner.spanItsYourTurn.textContent = i18n.itsYourTurn;
+document.getElementById('startScreen-start').value = i18n.quizzPage.startButton;
+document.getElementById('startScreen-start').innerText = i18n.quizzPage.startButton;
+start.paragraphCurrentPartner.spanName.textContent = i18n.quizzPage.partnerName.format("Partner " + currentPartnerId);
+start.paragraphCurrentPartner.spanItsYourTurn.textContent = i18n.quizzPage.itsYourTurn;
 
 configuration.show();
